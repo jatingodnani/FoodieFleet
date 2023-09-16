@@ -1,12 +1,16 @@
-import React from 'react'
+
+
 import Headersearch from './components/header'
 import Searchinpu from './components/searchinpu'
 
-function page() {
+ function Page() {
+
+  
   return (
+
     <main className="bg-gray-100 min-h-screen w-screen">
   <main className="max-w-screen-2xl m-auto bg-white">
-  <Headersearch/>
+  <Headersearch />
  
    
     <div className="flex py-4 m-auto w-2/3 justify-between items-start">
@@ -50,4 +54,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
