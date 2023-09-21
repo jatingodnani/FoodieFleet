@@ -1,4 +1,4 @@
-import  { NextApiRequest, NextApiResponse } from "next";
+
 import { PRICE, PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
@@ -9,6 +9,7 @@ const Data = {
 export default async function handler(
   req,res
 ) {
+ 
   //   await prisma.table.deleteMany();
 
   // await prisma.review.deleteMany();
@@ -1323,3 +1324,5 @@ export default async function handler(
 
   res.status(200).json({ name: "hello" });
 }
+handler();
+console.log("hii")

@@ -20,7 +20,8 @@ const fetchresto = async () => {
   });
   return res;
 };
-export default async function Home() {
+export default async function Home({params}) {
+
   const restaurant = await fetchresto();
 
   return (

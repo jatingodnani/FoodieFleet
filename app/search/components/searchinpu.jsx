@@ -1,16 +1,21 @@
+"use client"
 import React from 'react'
-
-function Searchinpu() {
+import { useRouter } from "next/navigation";
+function Searchinpu(resto) {
+  const resarray=["Toronto","Ottawa","Montreal","Hamilton","Kingston","Niagara"];
+  const router=useRouter();
+  const search=(res)=>{
+    console.log(res)
+    router.push(`/search?city=${res}`)
+  }
   return (
     <div className="w-1/5">
     <div className="border-b pb-4 flex flex-col justify-between gap-3 items-start ">
           <h1 className="mb-2 font-bold text-3xl">Region</h1>
-          <p className="font-light text-reg hover:bg-gray-200 w-3/4 pl-2 pt-1 rounded ">Toronto</p>
-          <p  className="font-light text-reg hover:bg-gray-200 w-3/4 pl-2 pt-1 rounded ">Ottawa</p>
-          <p  className="font-light text-reg hover:bg-gray-200 w-3/4 pl-2 pt-1 rounded ">Montreal</p>
-          <p  className="font-light text-reg hover:bg-gray-200 w-3/4 pl-2 pt-1 rounded ">Hamilton</p>
-          <p  className="font-light text-reg hover:bg-gray-200 w-3/4 pl-2 pt-1 rounded ">Kingston</p>
-          <p  className="font-light text-reg hover:bg-gray-200 w-3/4 pl-2 pt-1 rounded ">Niagara</p>
+
+          {
+            resarray.map((res,index)=><p className='cursor-pointer text-reg font-light hover:bg-gray-200 w-3/4 pl-2 pt-2 rounded pb-2' key={index} onClick={()=>search(res)}>{res}</p>)
+          }
         </div>
         <div className="border-b pb-4 mt-3 flex flex-col gap-2  ">
           <h1 className="mb-2 tex-3xl font-bold">Cuisine</h1>
