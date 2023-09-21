@@ -1,7 +1,7 @@
 import React from "react";
 
 function Card({eachcard}) {
-    console.log(eachcard)
+    console.log(eachcard,eachcard.price,eachcard.location)
   return (
   
       <div className="border-b flex pb-5 mt-2">
