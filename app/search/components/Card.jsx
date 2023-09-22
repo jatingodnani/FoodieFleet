@@ -1,7 +1,7 @@
 import React from "react";
 
-function Card({eachcard}) {
-    console.log(eachcard,eachcard.price,eachcard.location)
+function Card({eachcard,searchParams}) {
+    console.log(eachcard.price,eachcard.location)
   return (
   
       <div className="border-b flex pb-5 mt-2">
@@ -19,8 +19,8 @@ function Card({eachcard}) {
           <div className="mb-9">
             <div className="font-light flex text-reg">
               <p className="mr-4">{eachcard.price}</p>
-              <p className="mr-4">{eachcard.region}</p>
-              <p className="mr-4">{eachcard.location}</p>
+              <p className="mr-4">{eachcard.region.name}</p>
+              <p className="mr-4">{eachcard.location.name}</p>
             </div>
           </div>
           <div className="text-red-600">

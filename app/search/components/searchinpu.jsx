@@ -2,7 +2,7 @@
 import React from "react";
 
 import Link from "next/link";
-function Searchinpu({ locat, reg }) {
+function Searchinpu({ locat, reg,searchParams}) {
   return (
     <div className="w-1/5">
       <div className="border-b pb-4 flex flex-col justify-between gap-3 items-start ">
@@ -12,7 +12,9 @@ function Searchinpu({ locat, reg }) {
           <Link
             href={{
               pathname: "/search",
-              query: { city: res.name },
+              query: {
+               
+                 city: res.name },
             }}
             className="cursor-pointer text-reg font-light hover:bg-gray-200 w-3/4 pl-2 pt-2 rounded pb-2"
             key={index}
@@ -27,7 +29,9 @@ function Searchinpu({ locat, reg }) {
           <Link
             href={{
               pathname: "/search",
-              query: { city: res.name },
+              query: {
+                ...searchParams,
+                 region: res.name },
             }}
             className="cursor-pointer text-reg font-light hover:bg-gray-200 w-3/4 pl-2 pt-2 rounded pb-2"
             key={index}
