@@ -17,6 +17,8 @@ const specificresto=async(slug)=>{
       name:true,
       images:true,
       description:true,
+      review:true,
+
       
     }
 })
@@ -27,7 +29,7 @@ async function RestaurantDetail({params}) {
   
  let name=params.slug.split("-");
  name[name.length-1]=`(${name[name.length-1]})`
- console.log(resturant.id)
+
   return (
     <main className="bg-gray-100 min-h-screen w-screen">
       <main className="max-w-screen-2xl m-auto bg-white">
@@ -53,13 +55,13 @@ async function RestaurantDetail({params}) {
             <div className="mt-4 border-b pb-6">
               <h1 className="font-bold text-6xl">{resturant.name}</h1>
             </div>
-            <Desc description={resturant.description} />
+            <Desc review={resturant.review} description={resturant.description} />
             <Imageresto images={resturant.images}/>
             
-            <Review />
+            <Review review={resturant.review}/>
            
           </div>
-          <Schedule />
+          <Schedule  />
         </div>
       </main>
     </main>

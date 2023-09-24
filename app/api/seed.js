@@ -1324,5 +1324,4 @@ export default async function handler(
 
   res.status(200).json({ name: "hello" });
 }
-handler();
-console.log("hii")
+

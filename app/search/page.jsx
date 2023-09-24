@@ -26,7 +26,8 @@ const givesearch = async (city,region) => {
       main_image: true,
       price:true,
       slug:true,
-      location:true
+      location:true,
+      review:true
     },
   });
 };
