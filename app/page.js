@@ -15,7 +15,8 @@ const fetchresto = async () => {
       main_image: true,
       price:true,
       slug:true,
-      location:true
+      location:true,
+      review:true
     },
   });
   return res;
