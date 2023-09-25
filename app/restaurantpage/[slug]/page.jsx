@@ -4,7 +4,7 @@ import Review from "./review";
 import Schedule from "./Schedule";
 import Imageresto from "./image";
 import { PrismaClient } from "@prisma/client";
-
+import Heading from "./heading"
 const prisma=new PrismaClient();
 const specificresto=async(slug)=>{
   console.log(slug)
@@ -33,13 +33,7 @@ async function RestaurantDetail({params}) {
   return (
     <main className="bg-gray-100 min-h-screen w-screen">
       <main className="max-w-screen-2xl m-auto bg-white">
-        <div className="h-96 overflow-hidden">
-          <div className="bg-center bg-gradient-to-r from-[#0f1f47] to-[#5f6984] h-full flex justify-center items-center">
-            <h1 className="text-7xl text-white captitalize text-shadow text-center">
-            {name}
-            </h1>
-          </div>
-        </div>
+        <Heading name={name}/>
 
         <div className="flex m-auto w-2/3 justify-between items-start 0 -mt-11">
           <div className="bg-white w-[70%] rounded p-3 shadow">
