@@ -1,5 +1,6 @@
+import { datereservation } from '@/data/data'
 import React from 'react'
-
+console.log(datereservation)
 function Schedule() {
   return (
     <div className="w-[27%] relative text-reg shadow-xl">
@@ -10,8 +11,13 @@ function Schedule() {
       <div className="my-3 flex flex-col">
         <label htmlFor="">Party size</label>
         <select name="" className="py-3 border-b font-light" id="">
-          <option value="">1 person</option>
-          <option value="">2 people</option>
+        {/* {datereservation?.map((perperson) => (
+              <option key={perperson.person} value="">
+                {perperson.person} person
+              </option>
+            ))} */}
+         
+          
         </select>
       </div>
       <div className="flex  ">
