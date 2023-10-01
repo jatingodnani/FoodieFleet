@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Desc from "./desc";
 import Review from "./review";
-import Schedule from "./Schedule";
+import Schedule from "./schedule";
 import Imageresto from "./image";
 import { PrismaClient } from "@prisma/client";
 import Heading from "./heading"
@@ -18,7 +18,8 @@ const specificresto=async(slug)=>{
       images:true,
       description:true,
       review:true,
-
+      open_time:true,
+      close_time:true
       
     }
 })
@@ -26,7 +27,7 @@ return resturant
 }
 async function RestaurantDetail({params}) {
   const resturant=await specificresto(params.slug)
-  
+  console.log(resturant)
  let name=params.slug.split("-");
  name[name.length-1]=`(${name[name.length-1]})`
 
@@ -55,7 +56,7 @@ async function RestaurantDetail({params}) {
             <Review review={resturant.review}/>
            
           </div>
-          <Schedule  />
+          <Schedule opening={resturant.open_time} closing={resturant.close_time}  />
         </div>
       </main>
     </main>

@@ -1,21 +1,25 @@
 import { datereservation } from '@/data/data'
 import React from 'react'
-console.log(datereservation)
-function Schedule() {
+import {times} from "@/data/partytime"
+
+ function Schedule({opening,closing}) {
+
+  const filtertim=times.filter((eachtime)=>eachtime.time>=opening && eachtime.time<=closing);
+ 
   return (
     <div className="w-[27%] relative text-reg shadow-xl">
     <div className="fixed w-[20%] bg-white rounded p-3 shadow">
       <div className="text-center border-b pb-2 font-bold">
-        <h4 className="mr-7 text-lg">Make a Reservation</h4>
+        <h4 className="mr-7 text-lg">Make a Reservation89</h4>
       </div>
       <div className="my-3 flex flex-col">
         <label htmlFor="">Party size</label>
         <select name="" className="py-3 border-b font-light" id="">
-        {/* {datereservation?.map((perperson) => (
-              <option key={perperson.person} value="">
+        {datereservation?.map((perperson) => (
+              <option key={perperson.person} value={perperson.person}>
                 {perperson.person} person
               </option>
-            ))} */}
+            ))}
          
           
         </select>
@@ -31,8 +35,10 @@ function Schedule() {
         <div className="flex flex-col w-[48%]">
           <label htmlFor="">Time</label>
           <select name="" id="" className="py-3 border-b font-light">
-            <option value="">7:30 AM</option>
-            <option value="">9:30 AM</option>
+           {filtertim.map((time)=>(
+              <option value={time.displayTime}>{time.displayTime}</option>
+           ))}
+           
           </select>
         </div>
       </div>
