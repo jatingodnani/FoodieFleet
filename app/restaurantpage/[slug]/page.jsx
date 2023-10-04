@@ -56,7 +56,7 @@ async function RestaurantDetail({params}) {
             <Review review={resturant.review}/>
            
           </div>
-          <Schedule opening={resturant.open_time} closing={resturant.close_time}  />
+          <Schedule slug={params.slug} opening={resturant.open_time} closing={resturant.close_time}  />
         </div>
       </main>
     </main>

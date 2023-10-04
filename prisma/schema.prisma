@@ -93,13 +93,13 @@ model Review {
 model Booking {
   id               Int              @id @default(autoincrement())
   number_of_people Int
-  booking_time     Int
+  booking_time     DateTime
   booking_email    String
   first_name       String
   last_name        String?
   booking_phone    String
-  booking_occasion String
-  booking_request  String
+  booking_occasion String?
+  booking_request  String?
   restaurant_id    Int
   restaurant       Restaurant       @relation(fields: [restaurant_id], references: [id])
   table         Bookingontable[]
@@ -120,7 +120,7 @@ model Table {
 model Bookingontable {
   booking_id Int
   table_id   Int
- restaurant Table   @relation(fields: [table_id], references: [id])
+  restaurant Table   @relation(fields: [table_id], references: [id])
   booking    Booking  @relation(fields: [booking_id], references: [id])
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
